@@ -1,3 +1,4 @@
+import { CoursesService } from './../services/courses.service';
 import { Course } from './../model/course';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,18 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit{
 
-  courses: Course[] = [
-    { _id: '1', name: 'Angular', category: 'front-end'},
-    { _id: '2', name: 'Java', category: 'back-end'},
-    { _id: '3', name: 'CSS', category: 'front-end'}
-  ];
-
+  courses: Course[] = [];
   displayedColumns = ['name', 'category'];
+  // courseService: CoursesService
 
-  constructor() {
+  constructor(private courseService: CoursesService) {
     // this.courses = [];
+    // this.courseService = new CoursesService();
+
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.courses = this.courseService.list();
   }
 }
