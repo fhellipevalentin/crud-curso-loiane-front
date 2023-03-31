@@ -1,6 +1,6 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { CoursesService } from './../services/courses.service';
-import { Course } from './../model/course';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { CoursesService } from '../../services/courses.service';
+import { Course } from '../../model/course';
 import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of, pipe } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
